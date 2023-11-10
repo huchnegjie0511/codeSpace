@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-size: 0;/*由于换行被浏览器当成字符，所以需要通过font-size把其去除*/
+    }
+    /* body{
+       text-align: center;水平方向居中
+    } */
+   
+    div{
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display: inline-block;
+        /*display: inline;行内块，把块级元素变为一行的块,*/
+    }
+    .item1{
+        background-color: blue;/*浮动元素可以用margin但是不能用auto 0*/
+        
+    }
+    .item2{
+        background-color: pink;
+        /*float: left;在此处2 3 重叠原因是2脱离文档流*/
+    }
+    .item3{
+        background-color: green;
+    }
+</style>
+<body>
+    <div class="item1"></div>//代码的div会导致有边距
+    <div class="item2"></div>
+    <div class="item3"></div>
+</body>
+</html>

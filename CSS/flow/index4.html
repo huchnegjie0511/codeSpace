@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul li{
+        list-style: none;
+        width: 200px;
+        height: 100px;
+        float: left;
+    }
+    li:nth-child(1){/*li第一个选择器*/
+        background-color: red;
+    }
+    li:nth-child(2){/*li第二个选择器*/
+        background-color: yellow;
+    }
+    li:nth-child(3){/*li第三个选择器*/
+        background-color: green;
+    }
+    li:nth-child(4){/*li第四个选择器*/
+        background-color: black;
+    }
+    .text{
+        width: 100px;
+        height: 150px;
+        background-color:blue ;
+        clear:both;
+    }
+    ul{
+        height: 100px;
+    }
+    /* .clear{
+        clear: both;专门为浮动准备，清除浮动带来的影响
+    } */
+    /* ul::after{在标签之前表现after可以用来清除浮动
+        content: '';
+        clear:both;
+        display : block;
+    } */
+    ul{
+        overflow: auto;/*超出就自适应*/
+        overflow: hidden;
+        display: inline-block;/*去除浮动效果*/
+    }
+</style>
+<body>
+    <div class="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <div class="text">hello world</div>
+    </div>
+</body>
+</html>

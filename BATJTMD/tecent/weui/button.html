@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeUI源码</title>
+</head>
+<style>
+    .weui-btn{
+        position:relative;/*考虑全面*/
+        display:block;
+        width:184px;
+        margin-left:auto;
+        margin-right:auto;
+        /*margin：0px auto   不使用原因是增加性能，因为上下被也设置为0px*/
+        padding:12px 24px;
+        box-sizing:border-box;
+        font-size:17px;
+        font-weight:500;
+        text-align: center;
+        text-decoration: none;
+        color:#fff;
+        line-height:  1.4118em;
+        border-radius:8px;
+        /*css reset*/
+        -webkit-tap-highlight-color: rgba(0,0,0,0);/*恩上去不能有高亮 透明度为0*/
+        user-select:none;/*拒绝黏贴*/
+
+    }
+    .weui-btn_primary{
+        background-color: green;
+    }
+</style>
+<body>
+    <!--css国际命名规范BEM weui-btn Block  状态_primary-->
+    <!--button太复杂  不跳转-->
+    <a href="javascript:;" class="weui-btn weui-btn_primary">主要操作</a>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot API调用示例</title>
+</head>
+<body>
+    <h1>Chatbot API调用示例</h1>
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="输入消息...">
+        <button onclick="sendMessage()">发送</button>
+    </div>
+
+    <script>
+        let isWaiting = false;
+
+        async function sendMessage() {
+            if (isWaiting) {
+                console.log('等待上一条消息的响应...');
+                return;
+            }
+
+            const userInput = document.getElementById('user-input').value;
+            const chatLog = document.getElementById('chat-log');
+
+            // 调用Chatbot API
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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', // 请替换为您的OpenAI API密钥
+                },
+                body: JSON.stringify({
+                    model: 'text-davinci-003', // 替换为所选的模型
+                    messages: [
+                        { role: 'system', content: 'You' },
+                        { role: 'user', content: userInput },
+                    ],
+                }),
+            });
+
+            const data = await response.json();
+            const botResponse = data.choices[0].message.content;
+
+            // 在聊天日志中显示用户输入和机器人响应
+            chatLog.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+            chatLog.innerHTML += `<div><strong>Chatbot:</strong> ${botResponse}</div>`;
+            console.log('API 响应数据:', data);
+
+            isWaiting = true;
+            setTimeout(() => {
+                isWaiting = false;
+            }, 3000); // 设置延迟时间，单位为毫秒，这里设置为3秒
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.music__head{
+    position: relative;
+    height: 303px;
+    overflow: auto;
+}
+.music__head .bg{/*选中head里面的bg*/
+    height: 303px;
+    width: 100%;
+    background-image:url("https://img1.baidu.com/it/u=3129770633,3933811923&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500");
+    background-size:100% 100%;
+    filter: blur(10px);
+    position: absolute;
+    z-index: -1;
+}
+.music__head-title{
+    margin: 45px 0;
+    color:#fff;
+    padding: 0 40px;
+}
+.back{
+    float: left;
+
+}
+.title{
+    text-align: center;
+    font-size: 12px;
+}
+.music__body{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 130px);
+    top: 130px;
+    background-color: #fff;
+    border-top-right-radius: 32px;
+    border-top-left-radius:32px;
+
+}
+.body-pic{
+    width: 257px;
+    height: 283px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -39px;
+    box-shadow: 0 0 20px black;
+}
+.body-pic img{
+    height: 100%;
+}
+.body-desc{
+    margin-top: 280px;
+    text-align: center;
+}
+.body-line-name{
+    
+    align-items: center;
+}
