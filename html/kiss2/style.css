@@ -162,10 +162,9 @@ top: 20px;
 .kiss-r{
     margin: 0 auto;
     position: absolute;
-    left: 20px;
+    left: 35px;
      right: 0;
      bottom: -5px;
-     z-index: 3;
      opacity: 0;
      animation: kiss-r 4s ease infinite;
 }
@@ -175,7 +174,6 @@ top: 20px;
     border-radius: 50%;
     border-left: 5px solid #000;
     display: block;
-    
 }
 .mouth-r{
     width: 30px;
@@ -190,7 +188,6 @@ top: 20px;
      animation: mouth-r 4s ease infinite;
 }
 #r-ball{
-    opacity:value;
     animation: close-r 4s ease infinite;
 }
 @keyframes close-r{
@@ -218,11 +215,17 @@ top: 20px;
     50%{
         opacity: 1;
     }
-    70%{
-        opacity: 1;
+    50.5%{
+        opacity: 0;
     }
+    /*70%{
+        opacity: 1;
+    }*/
     84.9%{
         opacity: 0;
+    }
+    85%{
+        opacity: 1;
     }
     100%{
         opacity: 1;
@@ -235,11 +238,14 @@ top: 20px;
     50%{
         opacity: 0;
     }
-    70%{
-        opacity: 0;
+    50.5%{
+        opacity: 1;
     }
     84.9%{
         opacity: 1;
+    }
+    85%{
+        opacity: 0;
     }
     100%{
         opacity: 0;
