@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a(){
+            setTimeout(function(){
+                console.log('肖总的菜做完了')
+            },1000);
+        }
+        a();
+        function b(){
+            console.log('肖总在刷抖音');
+        }
+        b()
+        //对于v8引擎会先把容易制作的做好再做不容易的
+        //如果是单道批处理系统的话异步会执行吗？
+    </script>
+</body>
+</html>
