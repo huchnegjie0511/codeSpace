@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <button id="btn">新歌速递</button>
+    <ul id="ul">
+        <li ></li>
+    </ul>
+    <script>
+        const btn =  document.getElementById('btn');
+        btn.addEventListener('click',()=>{
+            //朝网易云的后端代码发http请求
+            console.log(123);
+            let xhr =new XMLHttpRequest();
+            xhr.open('GET','http://192.168.31.45:3000/top/song?type=7',true)//第一个参数是什么请求方式，第二个是从哪里要,第三个是请求方式 ture 异步  false 同步
+            xhr.onreadystatechange=()=>{//用于监听后端响应是否有回复
+                console.log(xhr.responseText);
+                if(xhr.readyState===4&&xhr.status===200){
+                    let result=JSON.parse(xhr.responseText)
+                    //console.log(JSON.parse(xhr.responseText))   json.parse（）可以把json字符串转化为json对象
+                    //console.log(result);
+                    result.data.forEach(song => {//参数只有一个的情况下小括号都能省略
+                        let li=document.createElement('li');
+                        li.innerHTML=song.name;
+                        document.getElementById('ul').appendChild(li)//添加子元素
+
+                    });
+                }
+            }
+            xhr.send();
+        })
+    </script>
+</body>
+</html>
