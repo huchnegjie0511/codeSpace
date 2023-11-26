@@ -1,0 +1,13 @@
+.button {
+  display: inline-block;/*相对行内元素可以设置宽高 相对块级元素可以在同一行*/
+  margin:  8rpx;
+  background-color: rgba(0,0,0,0.6);
+  font-weight: bold;
+  border-radius: 1px;
+  font-size: 32rpx;
+  transition: .3s all;
+}
+.button.primary{
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.9);
+}

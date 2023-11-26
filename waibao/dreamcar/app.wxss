@@ -1,4 +1,12 @@
-.hero{
-    background-color: green;
-    color: #fff;
+/* 模块化划分 */
+@import "styles/reset.wxss";/*动态引入指令，一部分放入进去可以引用全局,可以节省代码*/
+@import "styles/hero.wxss";
+@import "styles/button.wxss";
+@import "styles/action.wxss";
+/* 触发下单的按钮 */
+page{/*page代表全部界面*/
+  background: #f8f8f8;
+}
+.section{/*全选*/
+  height: 100vh;
 }

@@ -21,3 +21,17 @@
     user:真正的值
   })
   - 页面会热更新 重新绘制{{}}这部分
+  - 循环输出的概念
+    - 模板在{{直出}}外，数组列表输出的常态
+    - block 只承载指令 wx:for
+      不会出现在文档流中    
+    - item 默认     
+       item.image  
+- css 架构思路
+  Dry原则  Don't repeat youself!
+  css业务拆分  一个元素多个类名 
+  section hero white
+  - app.wxss 全局样式
+    -公用的样式
+    - 模块化
+  - page.wxss 页面业务样式                                                    

@@ -1,0 +1,29 @@
+.hero{}
+/* 主题 可以更改特定的页面样式*/
+.hero image{
+  height: 38.2vh;
+}
+.hero .content{
+  padding-top:10%;
+}
+.hero .content.centered{/*需要在.hero 后面留出空格前面才算名字 否则不能使用命名方法*/
+  text-align: center;
+}
+/* 只要使用rpx，小程序会自动解决适配问题 */
+.hero .sub-header{
+font-size: 32rpx;
+text-transform: uppercase;/*大写字母*/
+letter-spacing: 6rpx;/*间距*/
+margin-bottom: 16rpx;
+color: rgba(0,0,0,0.85);
+}
+/* 前面加入.hero的原因是因为其他人也会使用，备注就知道是你写的 */
+.hero .header{
+  font-size: 72rpx;
+  font-weight: bold;
+  margin: 0 12% 16rpx;
+}
+.hero .description{
+  padding: 0 12%;
+  margin-bottom: 64rpx;
+}

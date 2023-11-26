@@ -1,0 +1,9 @@
+image{/*全局图片样式 */
+    display: block;
+    width: 100%;
+}
+page{
+  line-height: 1.5;
+  /* 小程序专属相对单位 rpx=2px */
+  font-size: 32rpx;
+}

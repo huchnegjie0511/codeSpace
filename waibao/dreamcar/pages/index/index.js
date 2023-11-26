@@ -4,7 +4,9 @@ const app =getApp()
 Page({
   //页面的数据
   data:{
-    user:{}
+    //user:{}
+    slides:null,
+    entities:null
   },
   //生命周期
   onLoad(){
@@ -15,7 +17,7 @@ Page({
       //箭头函数里面没有this
       this.setData({
         slides:app.globalData.slides,
-        entities:app.globalData.entities
+        entities:app.globalData.vehicles
       })
     },2000)
     this.setData({
