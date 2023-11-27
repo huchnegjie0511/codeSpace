@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="tel">
+        <div>
+            <h1>{{message}}</h1>
+            <h2>{{count}}</h2>
+            <button @click="add">+1</button>
+            <button @click="minus">-1</button>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template:'#tel',
+            data:function(){
+                return{
+                    message:'大帅哥',
+                    count :1
+                }
+            },//写数据键名为变量名  键值为变量值
+            methods:{//写的数据键名为函数名  键值为函数值
+                add:function(){
+                    this.count++//vue会自动把更改后的变量更新上页面
+                },
+                minus:function(){
+                    this.count--
+                }
+
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

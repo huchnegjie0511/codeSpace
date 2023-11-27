@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="my-app">
+        <div>{{ msg }}</div>
+        <div v-text="msg"></div>
+        <!-- 在查找变量的时候，会自动检测v-text作为提取文本的位置，如果碰到div内部无法放置变量，可以直接创建指令使得可用 -->
+        <div>{{info}}</div>
+        <div v-html="info"></div>
+        <!-- 当字符串中有html标签的时候v-html会将其自动渲染成标签，而非当成字符串输出 -->
+    </template>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App={
+            template:'#my-app',
+            data(){
+                return{
+                    msg:'hello world',
+                    info:'<h1>这是一个富文本</h1>'
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

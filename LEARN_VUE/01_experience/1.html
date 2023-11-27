@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <h2>Hello world</h2> -->
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        // 获取的变量方便放置在html里面
+        const msg='你好'
+        const tel ={
+            template:`<h1>${msg}</h1>`
+        }; 
+        // 返回vue的实例对象
+        const app = Vue.createApp(tel);
+        // 利用mount（）挂载app.mount()代表挂载到app里面 html的id只能叫一个
+        app.mount('#app')
+    </script>
+</body>
+</html>

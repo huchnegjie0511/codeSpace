@@ -3,6 +3,7 @@
 @import "styles/hero.wxss";
 @import "styles/button.wxss";
 @import "styles/action.wxss";
+@import "styles/card.wxss";
 /* 触发下单的按钮 */
 page{/*page代表全部界面*/
   background: #f8f8f8;
