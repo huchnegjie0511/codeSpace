@@ -28,9 +28,8 @@
 <view class="cards">
   <view class="card" 
   wx:for="{{ entities }}"
-  wx:key="id"
-  >
-    <navigator url="/pages/vehicles/show">
+  wx:key="id">
+    <navigator url="/pages/vehicles/show?id={{item.id}}">
     <!--a标签 navigator实现跳转
       ./当前目录 相对路径
       /？绝对路径 项目根目录
