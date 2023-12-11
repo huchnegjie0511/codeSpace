@@ -5,42 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  img{
+    height: 100px;
+    height: 100px;
+  }
+</style>
 <body>
   <div id="app"></div>
 
   <template id="my-app">
-    <!-- <button v-on:click="handle">按钮</button>
-
-    <button @click="add">{{count}}</button>
-
-    <div @click="handle" @mouseenter="enter" style="width: 100px;height: 100px;border: 1px solid #000;"></div>
-
-    <div @="{click: handle, mouseenter: enter}" style="width: 100px;height: 100px;border: 1px solid #000;"></div> -->
-    <button @click="handleClick()">按钮</button>
-
-  </template>
+    
+  <!-- <h2 v-text="msg"></h2>v-text指令会直接生成一行 -->
+  <!-- 前端很多图片不能写死，因此不能直接写图片在网页上面，二十应该能使用js直接修改 -->
+<!-- <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F55c38ab5-7cff-46ef-ab2a-5149b36d30c7%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1704874899&t=bdf0c18c65a7e8e373bb17f1c1204630" name="img1" alt=""> -->
+  <img v-bind:src="imgUrl" alt="">
+  <!-- v-bind指令可以绑定这个属性 将imgUrl的数据源里的变量将其变为字符串 -->
+  <!-- <a href="https:www.baidu.com">百度一下</a>
+  为了方便程序员修改，应该使用js动态操作 -->
+  <a v-bind:href="link">百度一下</a>
+  <a :href="link">百度一下</a>
+  <!-- v-bind 的作用是将html的字符串改为变量 例如原本src或者src里面应该为字符串，后来转变为变量 -->
+</template>
 
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
-    const App = {
-      template: '#my-app',
+    const App = {//自创对象
+      template: '#my-app',//创建一个template，vue会进行查找
       data() {
         return {
-          count: 0
-        }
-      },
-      methods: {
-        handle() {
-          console.log('点了button');
-        },
-        add() {
-          this.count++
-        },
-        enter() {
-          console.log('鼠标移入');
+          msg:'hello,world',
+          imgUrl:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F55c38ab5-7cff-46ef-ab2a-5149b36d30c7%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1704874899&t=bdf0c18c65a7e8e373bb17f1c1204630",
+          link:'https:www.baidu.com'
         }
       }
+     
     }
 
     Vue.createApp(App).mount('#app')
