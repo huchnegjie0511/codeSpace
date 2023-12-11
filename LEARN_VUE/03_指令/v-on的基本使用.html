@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        color: red;
+    }
+</style>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+   
+  </template>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const App = {//自创对象
+      template: '#my-app',//创建一个template，vue会进行查找
+      data() {
+        return {
+            
+         }
+        }
+      }
+      // 通过methods进行函数绑定
+      
+     
+    
+
+    Vue.createApp(App).mount('#app')
+  </script>
+
+</body>
+</html>
+
+
