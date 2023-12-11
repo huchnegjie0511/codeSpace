@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        color: red;
+    }
+</style>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- <div v-bind:class="className">子进</div>
+    <div v-bind:class="{'active':isActive}">君君</div> -->
+    <!-- <div :class="{'active':isActive,'tittle':true}">但总</div>
+    可以动态添加多个类名 
+    <div class="lang" :class="className">浪哥</div>
+    <div class="baobao" :class="classObj">旭旭宝宝</div>
+    可以将多个类名统一放在一个对象里面 -->
+    <!-- <button @click="change">切换</button> -->
+    <!-- <div class="baby" :class="getClass()">羊羊宝贝</div> -->
+    <div :class="['feng','baby',className]">冯总</div>
+    <!-- 前两个是静态类名,第三个是动态类名 -->
+    <div :class="['wang',isActive?'active':'']">老王</div>
+    <div :class="['hengheng',{'active':isActive}]">恒恒</div>
+  </template>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const App = {//自创对象
+      template: '#my-app',//创建一个template，vue会进行查找
+      data() {
+        return {
+         className:'username',
+         isActive:'true',
+         classObj:{
+          active:true,
+          tittle:true
+         }
+        }
+      },
+      // 通过methods进行函数绑定
+      methods:{
+          change(){
+            this.isActive=!this.isActive
+          },  
+          getClass(){
+            return 'yangyang'
+          }
+        }
+     
+    }
+
+    Vue.createApp(App).mount('#app')
+  </script>
+
+</body>
+</html>
+
+
