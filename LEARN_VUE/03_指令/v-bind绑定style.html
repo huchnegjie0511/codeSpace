@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        color: red;
+    }
+</style>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div :style="{color:fontColor,fontSize:fontSize}">帆帆真帅</div>
+    <!-- 行内样式和css里面都有样式则行内样式优先表现 -->
+    <div :style="styleObj">航航cute</div>
+    <!-- 使用对象显示样式 -->
+    <div :style="[styleObj,styleObj2]"></div>
+    <!-- 同时出现多种对象属性 -->
+  </template>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const App = {//自创对象
+      template: '#my-app',//创建一个template，vue会进行查找
+      data() {
+        return {
+            fontColor:'blue',
+            fontSize:50,
+            styleObj:{
+                color:'green',
+                fontweight:'bold'
+            },
+            styleObj2:{
+                fontSize:60,
+
+            }
+         }
+        }
+      }
+      // 通过methods进行函数绑定
+      
+     
+    
+
+    Vue.createApp(App).mount('#app')
+  </script>
+
+</body>
+</html>
+
+
