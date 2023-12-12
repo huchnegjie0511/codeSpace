@@ -1,11 +1,7 @@
-//封装css函数
-.bg-image(@url){
-    background-image: ~"url(header/@{url}@2x.png)";//传路径进来自动使用二倍图
-    //由于使用了header装图片文件夹，因此需要在@{url}@2x.png前面添加  文件夹/  来确定文件的具体路径
-    //媒体查询可以用于查询用户的设备
-    @media (-webkit-min-device-pixel-ratio: 3) {//如果用户是三倍屏则自动使用三倍图  webkit是谷歌内核，保证能够读懂谷歌内核
-        background-image: ~"url(header/@{url}@3x.png)";
-        
-    }
-
+.bg-image(@url) {
+  background-image: ~"url(@{url}@2x.png)";
+  // 媒体查询
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: ~"url(@{url}@3x.png)";
+  }
 }

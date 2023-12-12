@@ -1,17 +1,31 @@
 <template>
-  <!-- 路由路口写在哪，代码就会拿到哪个路由路口展示 -->
-  <v-header></v-header>
-  <router-view></router-view>
+  <v-header :seller="sellerData" />
+ 
+    <router-view />
 </template>
-
+  
+  
 <script>
-  import Header from '@/components/header/Header.vue'
-  export default{
-    components:{
-      'v-header':Header
+import Header from '@/components/header/Header.vue'
+import { getSeller } from '@/api'
+export default {
+  components: {
+    'v-header': Header
+  },
+  data() {
+    return {
+      sellerData: {}
     }
+  },
+  created() {
+    getSeller().then(res => {
+      console.log(res);
+      this.sellerData = res
+    })
   }
+}
 </script>
-<style lang="less">
-
-</style>
+  
+  
+<style lang="less"></style>
+  
