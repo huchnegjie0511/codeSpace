@@ -29,8 +29,10 @@
       <i class="iconfont icon-youjiantou"></i>
     </div>
 
-    <div class="bg" style="background-image: url('http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg');"></div>
-  <header-detail  v-show="detailShow" @hide="handle"/>
+    <div class="bg" v-if="seller.avatar" :style="{backgroundImage: `url(${seller.avatar})`}"></div>
+    
+    <header-detail v-show="detailShow" @hide="handle"/>
+
   </div>
 </template>
 
@@ -48,18 +50,18 @@ export default {
       default: () => {}
     }
   },
-  data(){
-    return{
-      detailShow:false
+  data() {
+    return {
+      detailShow: false
     }
   },
-  methods:{
-    showDetail(){
-      this.detailShow=true;
+  methods: {
+    showDetail() {
+      this.detailShow = true;
     },
-    handle(val){
-      this.detailShow= val;
-
+    handle(val) {
+      // console.log('子组件发布了一个事件hide，值为:', val);
+      this.detailShow = val
     }
   }
 }
