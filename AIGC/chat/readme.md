@@ -16,6 +16,7 @@
     ...
     - 算法工程师 
     - AIGC 客服
+    prompt + LLM（openai）
     -python 语法
         pip python3
         import openai
@@ -24,4 +25,6 @@
         参数dict
     )   http的调用davince 模块
     -前后端数据交流的格式是JSON
+
+    
     

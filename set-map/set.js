@@ -2,7 +2,7 @@ let set =new Set([1,1,2,2,3,4])
 set.add()
 var arr=[1,2,1,1,'1']
 function unique(arr){
-    let     s=new Set(arr)
+    let s=new Set(arr)
     let res=Array.from(s)
     return res
 }
