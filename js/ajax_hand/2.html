@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax业务流封装</title>
+    
+</head>
+<body>
+    <script>
+        //返回promise对象的函数
+        //promise thenable 是微任务
+        //异步变同步，只会打印1111，不会打印2222
+        function getDataByAjax(url){
+            return new Promise((resolve,reject)=>{
+                //Promise是es6提供的一个类 可以被实例化，实例化的时候会立即执行传给它的执行器
+                //executor 同步
+                console.log('1111')
+                // 异步任务的容器
+                // setTimeout(()=>{
+                //      resolve('5555')
+                // },2000)
+                const xhr = XMLHttpRequest
+                ? new XMLHttpRequest()
+                : new ActiveXObject('Microsoft.XMLHTTP');
+                //使用的原因是未来兼容老版本，因为新版本没有XMLHttpRequest()这个函数对象
+                //主动请求数据
+                console.log(xhr.readyState);//0
+                xhr.open('GET',url,false);
+                console.log(xhr.readyState);//1 http请求通道打开
+                xhr.onreadystatechange=function(){
+                    console.log(xhr.readyState);//4 完成所有数据的传输
+                    if(xhr.readyState!=4){
+                       return ;
+                    //304 Not Modifyed 性能优化 服务器端资源在多次请求中并没有改变
+                    //资源改变以后会有一个（update_time）改变以后会有个更新时间戳，文件被修改的话  304响应头，不传输响应体
+                    // 前端 304拿到以后 前端会在浏览器缓存内部拿之前的结果，降低后端查询和前端响应时间
+                    //协商缓存
+
+                    }
+                    if(xhr.status===200||xhr.status===304){
+                        //代表着从前端或者后端都能拿到东西
+                        resolve(xhr.responseText)
+                    }else{
+                        reject(xhr.responseText)
+                    }
+                    //如果出问题都会把具体的问题都写在responseText
+
+                }
+                xhr.send()
+                console.log(xhr.readyState);
+
+            })
+        }
+        (async function(){
+            const p=getDataByAjax('https://api.github.com/users/shunwuyu/repos')
+            console.log('2222')
+            console.log(p)//pending状态
+            try{
+                const data = await p
+                console.log('3333')
+                console.log(p)
+                console.log(data)
+            }catch(err){
+                console.log(err)
+            }
+            //首先第一步运行const p 的操作 因此进行函数consle。log  了1111
+            //此时陷入了异步任务，因为没有返回resolve ，导致promise没有完成
+            //由于同步进行了console.log 所以打印 2222
+            //console.log 打印出pending状态
+            //data 等待2s p结束，以后发5555给data 然后打印  3333   以及状态  和data
+        })()
+    </script>
+</body>
+</html>

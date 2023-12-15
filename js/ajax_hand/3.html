@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let template='我是{{name}},年龄{{age}},性别{{sex}}'//replace可以替换{{}}固定
+        let person={
+            name:'pluto',
+            age:18,
+            sex:'男'
+        }
+        render(template,person)
+        function render(template,data){
+            // {}在reg 特定字符 在这里，我们是想匹配{}本身  转义
+            //  \d代表数字   \w代表单词   \w+  一个或多个
+            //(\w+)表示分组 （）拿出来
+             const reg=/\{\{(\w+)\}\}/       //js里，两个斜杠放东西就是一个正则对象,正则表达式里面{}代表长度  【】代表范围
+             //()内部包裹的代表的是按照这种格式进行分组
+             //true or false
+             //循环方式
+            //  while(reg.test(template)){
+            //     console.log('有的',reg.exec(template));
+            //     const name = reg.exec(template)[1];
+            //     console.log(name);
+            //     template=template.replace(reg,data[name]);
+            //     console.log(template)
+            //  }
+            // console.log(Object.prototype.toString.call(reg))
+            //递归方式（不用while）
+           if(reg.test(template)){
+                console.log('有的',reg.exec(template));
+                const name = reg.exec(template)[1];
+                console.log(name);
+                template=template.replace(reg,data[name]);
+                console.log(template)
+                return render(template,data)
+             }
+        }
+    </script>
+</body>
+</html>
