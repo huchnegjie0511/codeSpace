@@ -4,3 +4,5 @@
 4. # git commit -m '你的注释'  将暂存区的代码提交到master区域
 5. # git push origin master 将文件推送到远程仓库
 
+Git is a distributed version control system
+Git is free software
