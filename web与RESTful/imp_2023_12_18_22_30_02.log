@@ -1,0 +1,5 @@
+dimp V8 
+start dimp: SYSDBA/******@LOCALHOST:5236 DIRECTORY=C:\Users\74719\Desktop\web与RESTful FILE=suit1.dmp SCHEMAS="DM8" IGNORE=N COMPILE=Y INDEXFIRST=N TABLE_FIRST=N COMMIT_ROWS=5000 FAST_LOAD=N LOG=imp_2023_12_18_22_30_02.log LOG_WRITE=N dummy=N 
+
+[警告]文件打开出错，请检查您的输入参数……
+成功终止导入, 但出现警告

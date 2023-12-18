@@ -1,0 +1,114 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "106529",
+      "name": "用户",
+      "font_class": "iconfontyonghu",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "949254",
+      "name": "密码",
+      "font_class": "mima-copy",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1918705",
+      "name": "垃圾桶",
+      "font_class": "lajitong",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "3469773",
+      "name": "确认密码",
+      "font_class": "mima1",
+      "unicode": "e503",
+      "unicode_decimal": 58627
+    },
+    {
+      "icon_id": "8833247",
+      "name": "搜索--1",
+      "font_class": "soushuo",
+      "unicode": "e50b",
+      "unicode_decimal": 58635
+    },
+    {
+      "icon_id": "9268369",
+      "name": "修 改",
+      "font_class": "xiugai",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "9880170",
+      "name": "添加",
+      "font_class": "add-fill",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "10636086",
+      "name": "翻页 - 上一页",
+      "font_class": "fanye-shangyiye",
+      "unicode": "e791",
+      "unicode_decimal": 59281
+    },
+    {
+      "icon_id": "10636087",
+      "name": "翻页 - 首页",
+      "font_class": "fanye-shouye",
+      "unicode": "e792",
+      "unicode_decimal": 59282
+    },
+    {
+      "icon_id": "10636088",
+      "name": "翻页 - 最后一页",
+      "font_class": "fanye-zuihouyiye",
+      "unicode": "e793",
+      "unicode_decimal": 59283
+    },
+    {
+      "icon_id": "10636089",
+      "name": "翻页 - 下一页",
+      "font_class": "fanye-xiayiye",
+      "unicode": "e794",
+      "unicode_decimal": 59284
+    },
+    {
+      "icon_id": "11949139",
+      "name": "搜索--1",
+      "font_class": "icon-search",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "12804038",
+      "name": "性别",
+      "font_class": "xingbie",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "13866619",
+      "name": "三点",
+      "font_class": "sandian",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "14176034",
+      "name": "实名",
+      "font_class": "shiming",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}
