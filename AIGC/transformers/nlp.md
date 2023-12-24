@@ -19,3 +19,17 @@ transformers huggingface的核心库
     计算机组成原理
     summarization 总结思想
     zero-shot-image-classfication 图片检测
+- 读/写 操作系统  I/O 操作 Input内存 
+Output 硬盘 
+    同步代码    I/O  远程 ->内存|硬盘   网络传输的耗时
+    for（）  ms结束 多进程切换  轮循功能 
+    阻塞
+- 人生苦短，我用python
+    - request 网络请求
+    request.get(url,stream=True).raw
+    get(http请求的方法)  get 明文请求 a
+    post 提交表单
+    - PIL库 图片的读写等...
+        Image  r
+        ImageDraw   w
+        

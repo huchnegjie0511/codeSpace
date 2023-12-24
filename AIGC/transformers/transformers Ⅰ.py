@@ -22,3 +22,23 @@ url="https://unsplash.com/photos/oj0zeY2Ltk4/download?ixid=MnwxMjA3fDB8MXxzZWFyY
 #request.get python 同步语言
 img=Image.open(requests.get(url,stream=True).raw)
 img
+
+predictions= detector(
+    img,
+    candidate_labels=["hat","sunglasses","book"]
+)
+predictions
+
+
+
+from PIL import ImageDraw # 画图写模块
+draw = ImageDraw.Draw(img)
+
+for prediction in predictions:
+  box = prediction["box"]
+  label = prediction["label"]
+  score = prediction["score"]
+  xmin,ymin,xmax,ymax=box.values()  #解构
+  draw.rectangle((xmin,ymin,xmax,ymax),outline="red",width=1)
+  draw.text((xmin,ymin),"{label}:{round(score, 2)}",fill="red")
+img
