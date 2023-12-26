@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS事件流</title>
+</head>
+<style>
+    #app{
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+    }
+    #wrap{
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+
+    }
+</style>
+<body>
+    <div id="app">
+        <div id="wrap">
+            <div id="box">
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    let app=document.getElementById('app');
+    let wrap=document.getElementById('wrap');
+    app.addEventListener('click',()=>{
+        console.log('app');
+    },true)
+    wrap.addEventListener('click',()=>{
+        console.log('wrap');
+    },true)
+    box.addEventListener('click',(e)=>{
+        console.log('box');
+        //阻止冒泡
+        e.stopPropagation()
+        
+        console.log(e)
+    },true)
+    // 点击子容器事件可以穿透到父容器上面，但是点父容器可以穿透到子容器
+    // 点击紫色区域可以打印app和wrap，但是只点击蓝色容器只能打印app
+    // 从打印结果看点击事件先点击在了子容器身上，但是实际上先点击在了父容器身上
+    </script>
+</html>
