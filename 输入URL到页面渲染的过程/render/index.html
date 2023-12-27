@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">hello</div>
+</body>
+<script>
+    let app=document.getElementById('app')
+    app.style.position='relative'
+    app.style.width='100px'
+    console.log(app.offsetWidth)
+    app.style.height='200px'
+    console.log(app.offsight)
+    app.style.left='10px'
+    app.style.top='10px'//理论上进行四次回流,但是因为新浏览器推出,拥有优化策略
+    // app.style.cssText='width:100px;height:200px;letf:10px;top:10px'//动态添加类名修改样式可以减少回流
+
+</script>
+</html>
