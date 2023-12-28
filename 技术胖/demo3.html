@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+            content:"",
+            setMeal:"帝王套餐 学生套餐",
+            isShowMeal:false,
+            }
+        },
+        methods:{
+            welcomeClick(){
+                this.content="欢迎光临"
+            },
+            byeBtnClick(){
+                this.content="欢迎下次光临"
+            },
+            showOrHideBtnClick(){
+                this.isShowMeal=!this.isShowMeal
+            }
+        },
+        template:`
+           <div>
+                <div>{{content}}</div>
+                <button v-on:click="welcomeClick">有顾客来</button>
+                <button v-on:click="byeBtnClick">有顾客离开</button>
+                <div>
+                    <div v-if="isShowMeal">{{setMeal}}</div>
+                    <button v-on:click="showOrHideBtnClick">显示/隐藏套餐</div>
+                </div>
+           </div>
+        `
+    }).mount("#app")
+</script>
+</html>
