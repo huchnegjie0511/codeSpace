@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="onsubmit()">
+        <label for="user">账号</label>
+        <input type="text" name="user" id="" placeholder="请输入账号">
+        <button type="submit" id="btn">提交</button>
+    </form>
+</body>
+<script>
+    let btn=document.getElementById('btn')
+    btn.addEventListener('click',function(){
+        console.log('已提交');
+    })
+</script>
+</html>
