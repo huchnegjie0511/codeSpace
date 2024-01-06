@@ -84,7 +84,9 @@ const submitForm = (formEl :FormInstance|undefined) => {
             localStorage.setItem('ms_username',param.username)
             const keys= permiss.roleList[param.username == 'admin'?'admin':'user']
             localStorage.setItem('ms_keys',JSON.stringify(keys))//localStorage只能存储数组，因此应用stringify转化
+            permiss.setKeys(keys);
             router.push('/')
+
         } else {
             ElMessage.error('请校验表单')
         }

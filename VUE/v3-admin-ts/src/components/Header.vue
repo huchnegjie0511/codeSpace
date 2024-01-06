@@ -53,10 +53,13 @@
 </template>
 
 <script lang="ts" setup>
+import { useSidebarStore } from '../store/sidebar';
 import imgurl from '../assets/img/img.jpg';
 // import router from '../router';
 import { useRouter } from 'vue-router';
-import { ref } from 'vue';
+
+import { computed } from 'vue';
+// import { ref } from 'vue';
 const router= useRouter()
 const username=localStorage.getItem('ms_username');
 const message: number = 2;
@@ -68,10 +71,11 @@ const handleCommand=(command:string)=>{
         router.push('/user')
     }
 }
-const collapse = ref(false)
+const sidebarStore = useSidebarStore();
+// const collapse = ref(false)
+const collapse = computed(()=>sidebarStore.collapse)
 const collapseChange=()=>{
-    collapse.value=!collapse.value
-
+    sidebarStore.handleCollapse();
 }
 </script>
 
