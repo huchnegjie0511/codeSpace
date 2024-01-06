@@ -19,3 +19,18 @@
             - mouted <from ref="login">
          - 表单提交
             - validate验证一次
+- 为什么element-plus图标如此复杂？
+   - 按需加载 
+      图标库太大 用户使用其他图标，省空间
+   - 其他选择
+   - 单独安装图标库
+      app.component()全局挂载 用到哪些挂载哪些
+## ts
+- 写js就好，再做点加法
+- 最关心的数据
+   - ref
+   - reactive
+   - props 
+   - store
+- 函数的参数
+- 
