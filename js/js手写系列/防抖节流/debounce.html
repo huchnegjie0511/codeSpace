@@ -6,16 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="onsubmit()">
-        <label for="user">账号</label>
-        <input type="text" name="user" id="" placeholder="请输入账号">
+    <!-- <form action="onsubmit()"> -->
+        <!-- <label for="user">账号</label>
+        <input type="text" name="user" id="" placeholder="请输入账号"> -->
         <button type="submit" id="btn">提交</button>
-    </form>
+    <!-- </form> -->
 </body>
 <script>
     let btn=document.getElementById('btn')
-    btn.addEventListener('click',function(){
-        console.log('已提交');
-    })
-</script>
+    function send(e){
+        console.log('提交完成',e)
+    }
+    btn.addEventListener('click',debounce(send,1000))
+    function debounce(fn,delay){
+        let timer;
+        return function(){
+            if(timer){
+               clearTimeout(timer);//通过这个掐灭定时器
+            }
+            timer = setTimeout(function(){
+                fn()
+        },delay)//delay可以让用户调用
+        }//使用闭包记录定时器
+    }
+    </script>
 </html>
