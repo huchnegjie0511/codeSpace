@@ -1,57 +1,72 @@
 <template>
-    <div class="login">
-        <h1>登录</h1>
-        <div class="login-wrapper">
-            <div class="avatar">
-                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F9e8bd863-bf16-4647-abf0-88490ce78ced%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1706790479&t=770078ea1dc465ed1b244e491ea8a4ea" alt="">
-            </div>
-            <van-form @submit="onSubmit">
-            <van-cell-group inset>
-                <van-field
-                v-model="state.username"
-                name="用户名"
-                label="用户名"
-                placeholder="用户名"
-                :rules="[{ required: true, message: '请填写用户名' }]"
-                />
-                <van-field
-                v-model="state.password"
-                type="password"
-                name="密码"
-                label="密码"
-                placeholder="密码"
-                :rules="[{ required: true, message: '请填写密码' }]"
-                />
-            </van-cell-group>
-            <div style="margin: 16px;">
-                <van-button round block type="primary" native-type="submit">
-                登录
-                </van-button>
-            </div>
-            </van-form>
-            <p class="register" @click="register">新用户？点击这里注册</p>
+  <div class="login">
+    <h1>登录</h1>
+    <div class="login-wrapper">
+      <div class="avatar">
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F4d40b566-1f0a-4f8d-bc97-c513df8775b3%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1706790486&t=fc1d0acda06eb28bda1c145c853b23e0" alt="">
+      </div>
+
+      <van-form @submit="onSubmit">
+        <van-cell-group inset>
+          <van-field
+            v-model="state.username"
+            name="用户名"
+            label="用户名"
+            placeholder="用户名"
+            :rules="[{ required: true, message: '请填写用户名' }]"
+          />
+          <van-field
+            v-model="state.password"
+            type="password"
+            name="密码"
+            label="密码"
+            placeholder="密码"
+            :rules="[{ required: true, message: '请填写密码' }]"
+          />
+        </van-cell-group>
+        <div style="margin: 16px;">
+          <van-button round block type="primary" native-type="submit">
+            登录
+          </van-button>
         </div>
+      </van-form>
+
     </div>
+    <p class="register" @click="register">新用户？点击这里注册</p>
+  </div>
 </template>
+
 <script setup>
-    import { reactive } from 'vue'
-    import { useRouter }from 'vue-router'
-    const router=useRouter();//this.${router}
-    const state=reactive({//将对象变成响应式
-        username:'',
-        password:'',
-    })//需要手动引入
-    const onSubmit=()=>{//发送请求，将state.username  state.password传给后端    
-        console.log(state.username,state.password);
-    }
-    const register=()=>{
-        router.push('/register')
-    }
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from '../api'
+
+const router = useRouter()
+const state = reactive({  // 将对象变成响应式
+  username: '',
+  password: '',
+})
+
+const onSubmit = async() => {
+  // 发请求,将state.username, state.password传给后端
+  console.log(state.username, state.password);
+  const res = await axios.post('/login', {
+    username: state.username,
+    password: state.password
+  })
+  // console.log(res);
+  // 保存用户信息
+  sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+  router.push('/noteClass')
+}
+
+const register = () => {
+  router.push('/register')
+}
+
 </script>
 
-
-<style lang="less"scoped>
-
+<style lang="less" scoped>
 .login{
   width: 100vw;
   height: 100vh;
@@ -102,10 +117,6 @@
 
 <style>
 .van-cell__title.van-field__label{
-    width: 45px;
+  width: 45px;
 }
 </style>
-<!-- 页面需要配置路由 vue-router 
-    yarn add vue-router@4
--->
-

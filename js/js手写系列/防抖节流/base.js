@@ -1,3 +1,3 @@
-function foo(a,b){
-    
+function foo(){
+    console.log(arguments.pop())
 }
