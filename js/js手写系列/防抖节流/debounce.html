@@ -21,11 +21,14 @@
     function debounce(fn,delay){
         let timer;
         return function(){
+            console.log(...arguments)
+            let args = arguments //防抖不仅要使原函数不变，还要使得原函数的this指向不出现问题
             if(timer){
                clearTimeout(timer);//通过这个掐灭定时器
+
             }
             timer = setTimeout(function(){
-                fn()
+                fn.call(this,...args)
         },delay)//delay可以让用户调用
         }//使用闭包记录定时器
     }
