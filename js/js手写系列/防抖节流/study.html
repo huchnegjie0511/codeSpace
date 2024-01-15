@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="submit" id="btn">
 </body>
+<script>
+    let btn = document.getElementById('btn')//获取点击事件
+    function send(e){//定义函数确认提交完成
+        console.log('已提交',e)
+    }
+    btn.addEventListener('click',debounce(send,1000))//建立一个监听事件，点击btn后自动运行debounce
+    function debounce(fn,deplay){
+        let timer=null;//初始化计时器
+        return function(){
+            let args=arguments;// 对象是一个类数组对象，可以通过索引访问其中的参数。
+            if(timer){
+                clearTimeout(timer); //检测之前是否有点击过，如果点击过就不提交，重置timer值
+            }
+            timer=setTimeout(function(){//
+                fn.call(this,args)//使用call函数重定位this指针与传入参数
+            },deplay)
+        }
+    }
+</script>
 </html>

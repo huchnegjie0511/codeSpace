@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">提交</button> 
+</body>
+<script>
+    let btn = document.getElementById('btn')//建立获取点击事件
+    function send(e){//设定返回函数，确认提交成功
+        console.log('已提交',e)
+    }
+    btn.addEventListener('click',throttle(send,3000))//设定监听事件，在点击后某段事件
+    function throttle(fn,delay){//确定返回函数和节流间隔时间
+        let prevTime= Date.now();//确定点击事件
+        return function(){
+            if(Date.now()-prevTime>delay){//判定事件间隔，当达到需要的时间时就再次提交
+                fn.apply(this,...arguments);//返回正确的this指针和参数
+                prevTime = Date.now()//重新设置最后一次点击的事件
+            }
+        }
+    }
+</script>
+</html>
