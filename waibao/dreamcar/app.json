@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/cars/cars",
-    "pages/logs/logs",
     "pages/vehicles/show"
   ],
+  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

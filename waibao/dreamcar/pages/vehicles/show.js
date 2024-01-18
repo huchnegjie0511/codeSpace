@@ -1,24 +1,39 @@
 // pages/vehicles/show.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    //声明绑什么数据
+    entity:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    const id=options.id;
-    console.log(id)
+    // const id=options.id;
+    const { id }=options;//解构出来id
+    // console.log(id)
+    console.log(app.globalData.vehicles)
+    const entity=app.globalData.vehicles.filter((item)=>{
+      return item.id==id
+    });
+    // console.log(entity);
+    this.setData({
+      entity: entity[0]
+    })
+    wx.setNavigationBarTitle({
+      title: this.data.entity.header
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+
   onReady() {
 
   },

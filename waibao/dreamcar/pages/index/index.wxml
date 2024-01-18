@@ -21,7 +21,6 @@
       <button class="button primary">了解更多</button>
       </view>
       </view>
-      
       </swiper-item>
     </block>
 </swiper>

@@ -24,7 +24,4 @@ Page({
     //   user:app.globalData.user
     // })
   },
-  // onReady() {
-  //   console.log('ready Go')
-  // }
 })
