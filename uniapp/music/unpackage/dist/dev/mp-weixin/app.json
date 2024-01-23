@@ -21,8 +21,8 @@
       {
         "pagePath": "pages/index/index",
         "text": "发现",
-        "iconPath": "/static/icon/wangyiyun.png",
-        "selectedIconPath": "/static/icon/wangyiyun-active.png"
+        "iconPath": "/static/icon/wangyiyun1.png",
+        "selectedIconPath": "/static/icon/wangyiyun1-active.png"
       },
       {
         "pagePath": "pages/play/play",
@@ -33,12 +33,12 @@
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "/static/icon/yinle.png",
-        "selectedIconPath": "/static/icon/yinle-active.png"
+        "iconPath": "/static/icon/yinle1.png",
+        "selectedIconPath": "/static/icon/yinle1-active.png"
       },
       {
         "pagePath": "pages/follow/follow",
-        "text": "我的关注",
+        "text": "关注",
         "iconPath": "/static/icon/wodeguanzhu.png",
         "selectedIconPath": "/static/icon/wodeguanzhu-active.png"
       },

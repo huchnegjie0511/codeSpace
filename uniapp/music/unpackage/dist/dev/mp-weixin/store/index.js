@@ -3,7 +3,7 @@ const common_vendor = require("../common/vendor.js");
 const store = common_vendor.createStore({
   state: {
     isShowMenu: false
-    //控制菜单显示隐藏
+    // 控制菜单显示隐藏
   },
   mutations: {
     changeIsShowMenu(state, flag) {

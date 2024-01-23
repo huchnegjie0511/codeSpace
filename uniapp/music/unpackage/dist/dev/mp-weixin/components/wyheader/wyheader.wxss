@@ -23,7 +23,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.header {
+.header.data-v-f4ce61de {
   height: 100rpx;
   display: flex;
   justify-content: space-between;
@@ -36,6 +36,6 @@
   box-sizing: border-box;
   z-index: 999;
 }
-.box {
+.box.data-v-f4ce61de {
   height: 100rpx;
 }

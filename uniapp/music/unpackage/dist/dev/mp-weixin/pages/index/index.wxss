@@ -33,20 +33,20 @@
 .index .search.data-v-1cf27b2a .uni-searchbar {
   height: 100%;
   padding: 0;
-  border-radius: 100rpx;
 }
 .index .search.data-v-1cf27b2a .uni-searchbar .uni-searchbar__box {
   height: 100%;
   padding: 0;
 }
 .index .banner .swiper-item.data-v-1cf27b2a {
+  width: 100%;
   height: 100%;
+  border-radius: 10px;
   overflow: hidden;
 }
 .index .banner .swiper-item image.data-v-1cf27b2a {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 }
 .index .balls.data-v-1cf27b2a {
   display: flex;
@@ -55,7 +55,7 @@
 }
 .index .balls .ball-item.data-v-1cf27b2a {
   flex: 0 0 20%;
-  font-size: 24rpx;
+  font-size: 20rpx;
   text-align: center;
 }
 .index .balls .ball-item .icon.data-v-1cf27b2a {
@@ -64,7 +64,7 @@
   margin: 0 auto;
   margin-bottom: 14rpx;
   background-color: #d81e06;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 .index .balls .ball-item .icon image.data-v-1cf27b2a {
   width: 100%;

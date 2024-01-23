@@ -25,23 +25,24 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import { useStore } from 'vuex';
-const store = useStore()
+import { useStore } from 'vuex'
 
-const isShow = computed(()=>{
+const store = useStore()
+// console.log(store);
+const isShow = computed(() => {
 	return store.state.isShowMenu
 })
 
 const hideMenu = () => {
 	// isShow.value = false
-	store.commit('changeIsShowMenu',false)
+	store.commit('changeIsShowMenu', false)
 }
 </script>
 
 <style lang="scss" scoped>
 .menu-left {
 	position: fixed;
-	top: 0;
+	top: 65rpx;
 	z-index: 9999;
 	width: 620rpx;
 	height: 100%;
