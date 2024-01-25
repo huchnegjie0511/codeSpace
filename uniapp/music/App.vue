@@ -41,7 +41,7 @@
 						cookie: key
 					},
 					success: (res) => {
-						console.log(res);
+						// console.log(res);
 						let nickname = res.data.profile && res.data.profile.nickname
 						let id = res.data.profile && res.data.profile.userId
 						let avatar = res.data.profile && res.data.profile.avatarUrl
@@ -55,5 +55,5 @@
 
 <style>
 	/*每个页面公共css */
-	@import url("https://at.alicdn.com/t/c/font_4416312_yya8hpmtu5.css");
+	@import url("https://at.alicdn.com/t/c/font_4416312_1m932ehvlrq.css");
 </style>

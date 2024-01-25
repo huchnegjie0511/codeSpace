@@ -5,7 +5,7 @@ import Vue from 'vue'
 import './uni.promisify.adaptor'
 Vue.config.productionTip = false
 
-Vue.prototype.name= '测试名称'
+// Vue.prototype.name = '测试名称'
 
 App.mpType = 'app'
 const app = new Vue({
@@ -13,6 +13,7 @@ const app = new Vue({
 })
 app.$mount()
 // #endif
+
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'

@@ -5,8 +5,8 @@ if (!Math) {
   "./pages/index/index.js";
 }
 const _sfc_main = {
-  onLaunch: function() {
-    console.log("App Launch");
+  onLaunch: function(e) {
+    console.log("App Launch", e);
   },
   onShow: function() {
     console.log("App Show");
@@ -15,7 +15,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/74719/Desktop/codespace/uniapp/base/base/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/base/base/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {

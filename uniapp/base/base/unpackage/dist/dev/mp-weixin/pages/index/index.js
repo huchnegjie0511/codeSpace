@@ -5,7 +5,7 @@ const _sfc_main = {
   setup(__props) {
     const title = common_vendor.ref("你好");
     const changeTitle = () => {
-      title.value = title.value === "你好" ? "hello" : "你好";
+      title.value = title.value === "你好" ? "Hello" : "你好";
     };
     const reverseTitle = common_vendor.computed(() => {
       return title.value.split("").reverse().join("");
@@ -19,5 +19,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/74719/Desktop/codespace/uniapp/base/base/pages/index/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/base/base/pages/index/index.vue"]]);
 wx.createPage(MiniProgramPage);
