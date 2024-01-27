@@ -10,11 +10,10 @@ const routers =[//路由帮助切换代码，等同于原本html的切换页面�
             {
                 path:'/home',
                 redirect:'/home/newest'//路由的重定向通常用于首页，可以切换
-
-            }
+            },
             {
-                path:'newest',
-                component:Newest
+                path:'/newest',
+                component:Newest,
             },
             {
                 path:'/recommend',
