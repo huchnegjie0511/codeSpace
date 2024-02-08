@@ -16,3 +16,5 @@ new Promise((resolve, reject) => {
 }).then(() => {     // then1
   console.log('then1');
 })
+
+

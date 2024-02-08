@@ -23,6 +23,25 @@ class linkList{
         }
         
     }
-    
+    insert(val,position){
+        let node = new node(val);
+        let current = this.head;
+        let previous;
+        let index = 0;
+        if(position===0){
+            node.next=current;
+            this.head=node;
+        }else{
+            while(index++<position){
+                previous=current;
+                current=current.next;
+            }
+            previous.next=node;
+            node.next=current;
+        }
+        this.length++;
+        return true;
+    }
+
     
 }

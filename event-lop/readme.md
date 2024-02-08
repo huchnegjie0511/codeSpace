@@ -19,3 +19,26 @@ js作为脚本语言被设计出来，原本不愿意消耗太多资源，但是
 1. 节省内存 
 2. 单线程没有锁 节约上下文切换的时间
 
+
+# 异步
+- 宏任务（macrotask）：
+<script>
+setTimeout
+setIntercal
+setImmediate
+I/O
+UI-rendering //页面渲染
+
+- 微任务（microtask）
+promise.then()
+MutationObserver
+Process.nextTick()
+
+
+# event-lop
+1.执行同步代码（这属于宏任务）
+2.当执行栈为空，查询是否有有异步代码需要执行
+3.执行微任务
+4.如果有需要，会渲染页面
+5.执行宏任务（这也叫下一轮的event-lop开始）
+
