@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <ul id="posts"></ul>
+
+</body>
+<script>
+    fetch('https://localhost:3000/posts')
+        .then(res => res.json())
+        .then(data=>{
+            document.querySelector('#posts').innerHTML = data.map(post => `
+            <li>
+                <h2>${post.title}<h2>
+                <div>${post.author}</div>
+            </li>
+            `).join('')
+        })
+</script>
+</html>
