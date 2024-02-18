@@ -1,26 +1,31 @@
 {
-    "posts":[
-        {
-            "id":1,
-            "title":"你不知道的JavaScript",
-            "author":"kyle simpson"
-        },
-        {
-            "id":2,
-            "title":"JavaScript高级程序设计",
-            "author":"Nicholas C.Zakas"
-        }
-    ],
-    "comments":[
-        {
-            "id":1,
-            "body":"好书！",
-            "postId":1
-        },
-        {
-            "id":2,
-            "body":"好书！",
-            "postId":2
-        }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "你不知道的JavaScript",
+      "author": "kyle simpson"
+    },
+    {
+      "id": "2",
+      "title": "JavaScript高级程序设计",
+      "author": "Nicholas C.Zakas"
+    },
+    {
+      "id": "b9ea",
+      "title": "ES6标准入门",
+      "author": "阮一峰"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "好书！",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "好书！",
+      "postId": 2
+    }
+  ]
 }
