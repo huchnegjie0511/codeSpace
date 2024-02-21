@@ -9,8 +9,9 @@
   <div id="app"></div>
 
   <template id="my-app">
-   <h2 v-if="">hello world</h2>
-   <button>切换</button>
+   <h2 v-if="isShow">hello world</h2>
+   <h2 v-else>你好世界</h2>
+   <button @click="change">切换</button>
   </template>
 
 
@@ -20,6 +21,7 @@
       template: '#my-app',
       data() {
         return {
+          isShow: true,
           count: 0
         }
       },
@@ -32,6 +34,9 @@
         },
         enter() {
           console.log('鼠标移入');
+        },
+        change(){
+          this.isShow = !this.isShow
         }
       }
     }
