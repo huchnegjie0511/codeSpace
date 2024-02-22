@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #app {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+    }
+    .box1 .box2 .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+    }
+    h2{
+        color: blueviolet;
+    }
+    /* 后代选择器 */
+    #app div{
+        border: 2px solid#f50707;
+    }
+    /* 子元素选择器 */
+    #app>div{
+        border: 2px solid#f50707;
+    }
+    /* 相邻的兄弟选择器 */
+    .box1 + .box2{
+        /* 先找box1再找box1相邻的box2 */
+        border: 2px solid#f50707;
+    }
+    /* 属性选择器 将属性为abc的改为此样式*/
+    input[abc='abc']{
+        border: 2px solid#f50707;
+    }
+    #input::before{
+        content: '000';
+        display: block;
+    }
+    #input:hover{
+        background-color: #e387e3;
+    }
+    #input:focus{
+        /* 聚焦变样式 */
+        background-color: #e387e3;
+    }
+</style>
+<style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+    }
+    .wrap{
+        background-color: rgb(227, 80, 47);
+    }
+    .div{
+        background-color: blue;
+    }
+</style>
+<body>
+    <div id="app">
+        <div class="box1">
+            <div class="title">
+                <h2>这是标题</h2>
+            </div>
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <input type="text" abc="abc">
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="my-app">
+        <h2>歌曲列表</h2>
+        <ul>
+            <li>夜曲</li>
+            <li v-for="(item,index) in songs">
+                {{ index+1 }}--{{item}}
+                <a href="#">x</a>
+            </li>
+        </ul>
+    </template>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const App={
+        template:'#my-app',
+        data(){
+            return{
+                songs:['夜曲','夜的第七章','夜的第七章']
+            }
+        }
+    }
+    
+    Vue.createApp(App).mount('#app')//将APP挂载到#app上面
+</script>
+</html>
