@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="my-app">
+        <button @click="change">修改firstname</button>
+        <h2 >computed属性:{{ fullname }}</h2>
+        <h2 >computed属性:{{ fullname }}</h2>
+        <h2 >computed属性:{{ fullname }}</h2>
+        <h2 >computed属性:{{ fullname }}</h2>
+
+        
+        <h2>methods属性:{{getFullName()}}</h2>
+        <h2>methods属性:{{getFullName()}}</h2>
+        <h2>methods属性:{{getFullName()}}</h2>
+        <h2>methods属性:{{getFullName()}}</h2>
+
+    </template>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const App={
+        template:'#my-app',
+        data(){
+            return{
+                firstname:'三',
+                lastname:'张'
+            }
+        },
+        computed:{//响应式执行，当它依赖的数据源发生变更就会执行
+            fullname(){
+                //计算属性是有缓存的，当我们多次使用计算属性时，计算属性中的逻辑只会执行一次
+                console.log('computed中的执行了')
+                return this.lastname+this.firstname
+            }            
+        },
+        methods:{
+            getFullName(){
+                console.log('method中的执行了')
+                return this.lastname+this.firstname
+            },  
+            change(){
+                this.firstname='四'
+            }
+
+        }
+    
+}
+    Vue.createApp(App).mount('#app')//将APP挂载到#app上面
+</script>
+</html>

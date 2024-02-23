@@ -10,10 +10,9 @@
     <template id="my-app">
         <h2>歌曲列表</h2>
         <ul>
-            <li>夜曲</li>
             <li v-for="(item,index) in songs">
                 {{ index+1 }}--{{item}}
-                <a href="#">x</a>
+                <a href="#" @click="del(index)" :key="index">x</a>
             </li>
         </ul>
     </template>
@@ -24,9 +23,15 @@
         template:'#my-app',
         data(){
             return{
-                songs:['夜曲','夜的第七章','夜的第七章']
+                songs:['夜曲','夜的第七章','威廉古堡']
+            }
+        },
+        methods:{
+            del(index){
+                this.songs.splice(index,1)
             }
         }
+
     }
     
     Vue.createApp(App).mount('#app')//将APP挂载到#app上面
