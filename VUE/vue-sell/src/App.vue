@@ -19,6 +19,7 @@
 <script>
 import Header from '@/components/header/Header.vue'
 import { getSeller } from '@/api'
+import axios from 'axios'
 export default {
   components: {
     'v-header': Header
@@ -33,7 +34,9 @@ export default {
       // console.log(res);
       this.sellerData = res
     })
+    
   }
+  
 
 }
 

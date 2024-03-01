@@ -178,7 +178,7 @@ export default {
     bottom: 0;
     background-size: 100% 100%;
     z-index: -1;
-    filter: blur(10px);
+    filter: blur(10px);//虚化
   }
 }
 </style>
