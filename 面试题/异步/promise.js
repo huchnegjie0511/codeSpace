@@ -24,7 +24,7 @@ class MyPromise{
                 this.reason=reason;
                 this.onRejectedCallbacks.forEach(fn=>fn(value));
             }
-        }
+        };
         then(onFulfilled, onRejected){
             //把onFulfilled 存起来 供resolve调用onFulfilled()
             if(this.state==='pending'){
@@ -35,25 +35,12 @@ class MyPromise{
                 onFulfilled(this.value);
             }
         }
-    then(onFulfilled, onRejected){
-        return this._promise.then(onFulfilled, onRejected);
-    }
-    catch(onRejected){
-        return this._promise.catch(onRejected);
-    }
-    finally(onFinally){
-        return this._promise.finally(onFinally);
-    }
-    static resolve(value){
-        return Promise.resolve(value);
-    }
-    static reject(reason){
-        return Promise.reject(reason);
-    }
-    static all(iterable){
-        return Promise.all(iterable);
+       
     }
 }
+
 new MyPromise((resolve, b)=>{
 
 })
+
+

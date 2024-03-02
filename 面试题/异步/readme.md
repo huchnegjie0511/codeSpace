@@ -17,3 +17,10 @@
                 维护状态state的值为fulfilled或者rejected，目的是为了让promise一经改变状态就不能再次改变也就保证了then和catch不可能同时触发
         （2）内部的resolve函数会修改state为fulfilled，并触发then中的回调
 - js原本是一个脚本语言
+
+
+
+4. async/await
+   (1) es6提供的一种新的处理异步代码的方案
+   (2) 没有错误捕获机制
+   (3) async/await是由promise+generator  来实现的，本质是在Generator的基础上 通过递归的方式来自动执行一个又一个的next函数，当done为true时结束递归
