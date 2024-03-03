@@ -44,7 +44,7 @@ export default {
     SupportIcon,
     HeaderDetail
   },
-  props: {
+  props: {//父组件传的东西
     seller: {
       type: Object,
       default: () => {}
