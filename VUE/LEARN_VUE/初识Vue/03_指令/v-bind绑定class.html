@@ -24,6 +24,8 @@
     <!-- <button @click="change">切换</button> -->
     <!-- <div class="baby" :class="getClass()">羊羊宝贝</div> -->
     <div :class="['feng','baby',className]">冯总</div>
+    <div v-bind:class="{'active':isActive}">君君</div> 
+
     <!-- 前两个是静态类名,第三个是动态类名 -->
     <div :class="['wang',isActive?'active':'']">老王</div>
     <div :class="['hengheng',{'active':isActive}]">恒恒</div>

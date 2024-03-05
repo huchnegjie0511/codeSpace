@@ -15,10 +15,28 @@
               {{item.name}}
             </span>
           </li>
+          
+        
         </ul>
       </div>  
       <div class="foods-wrapper">
-        右侧菜品
+        <ul>
+          <li class="menu-item" 
+            :class="{'current' : currentIndex === index}"
+            v-for="(item, index) in goods" 
+            :key="index"
+            @click="selectMenu(index)"
+            >
+            <li class="every"v-for="(food) in item.foods ">
+              <div style="float: left;"><img class="image" :src="food.image" alt="Food Image"></div>
+              <div class="food-right">
+                <span class="food">{{ food.name }}</span>
+                <span class="price">价格：{{ food.price }}元</span>
+              </div>
+              
+            </li>
+          </li>
+        </ul>
         
       </div>
     </div>
@@ -34,12 +52,13 @@ import BScroll from '@better-scroll/core'
 
 export default {
   components: {
-    SupportIcon
+    SupportIcon,
   },
   data() {
     return {
       goods: [],
-      currentIndex: 0
+      currentIndex: 0,
+
     }
   },
   created() {
@@ -95,9 +114,35 @@ export default {
           font-weight: 700;
         }
       }
+     
     }
     .foods-wrapper{
       flex: 1;
+      .every{
+        padding: 10px 0;
+        width: 300px;
+        height: 70px;
+        border-bottom: 1px solid #f3f3f3;
+      .food-right{
+        margin-left:80px;
+        .food{
+        float: left;
+        font-weight:bold ;
+        width: 240px;
+        }
+      .price{
+        float:left;
+        width: 240px;
+      }
+      }
+      .image{
+        float: left;
+        width: 60px;
+        height: 60px;
+        }
+      }
+      
+     
     }
   }
 

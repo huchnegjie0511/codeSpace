@@ -5,6 +5,7 @@
 
         <div class="detail-main">
           <h1 class="name">店铺名称</h1>
+          
         </div>
 
 
@@ -41,7 +42,7 @@
   bottom: 0;
   background: @color-background-s;
   color: @color-white;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);//底层虚化
   z-index: 999;
   &.fade-enter-from, &.fade-leave-to{
     opacity: 0;
