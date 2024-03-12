@@ -1,4 +1,7 @@
-
+# 模块化
+- window:遵照ecmascript 标准,export||export default 抛出,import引入
+- node:遵照common JS标准,module.exports||exports 抛出,require引入
+(node现在也兼容了ecmascript标准)
 
 
 

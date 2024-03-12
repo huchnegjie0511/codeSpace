@@ -1,12 +1,12 @@
 <template>
 <div class="home_container">
-    <item-container></item-container>
+    <item-container parent-component="home"></item-container>
 </div>
 </template>
 <script>
 import ItemContainer from '@/components/itemContainer.vue'
     export default{
-        components:{
+        component:{
             ItemContainer
         }
 }

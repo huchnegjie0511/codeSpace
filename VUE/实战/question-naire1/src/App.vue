@@ -2,6 +2,7 @@
 <div>
   <router-view></router-view>
 </div>
+
 </template>
 
 
@@ -13,9 +14,4 @@ export default {
 </script>
 <style lang="less">
 
-.test {
-  width: 5rem;
-  height: 5rem;
-  background-color: red;
-}
 </style>
