@@ -1,8 +1,8 @@
 const config = {
   database: {
-    DATABASE: 'noteBook',
+    DATABASE: 'notebook',
     USERNAME: 'root',
-    PASSWORD: '12345678',
+    PASSWORD: 'password',
     PORT: '3306',
     HOST: 'localhost'
   }
