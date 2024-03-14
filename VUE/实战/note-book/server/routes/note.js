@@ -27,7 +27,7 @@ router.post('/findNoteDetailById', async(ctx) => {
     if (result.length) {
       ctx.body = {
         code: '8000',
-        data: result[0],
+        data: result[0], 
         msg: 'success'
       }
     } else {
