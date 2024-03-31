@@ -1,8 +1,9 @@
+function showName() {
+  console.log('杰哥');  // 杰哥
+}
+var myName;
 showName()
 
-console.log(myName)
+console.log(myName); // undefined
+myName = '王艺杰'
 
-var myName='wangyijie'
-function showName(){
-    console.log('jiege')
-}
